@@ -1,0 +1,57 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@700;800&family=Poppins:wght@600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Poppins", "Montserrat", sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+}
+
+@layer base {
+  body {
+    @apply bg-[#0F172A] text-[#F8FAFC] font-sans antialiased selection:bg-[#7C3AED]/30;
+    background-image: 
+      radial-gradient(at 0% 0%, rgba(124, 58, 237, 0.15) 0px, transparent 50%),
+      radial-gradient(at 100% 0%, rgba(6, 182, 212, 0.15) 0px, transparent 50%),
+      radial-gradient(at 50% 50%, rgba(15, 23, 42, 1) 0px, transparent 100%);
+    background-attachment: fixed;
+  }
+}
+
+.glass {
+  @apply bg-white/5 backdrop-blur-xl border border-white/10 shadow-[0_8px_32px_0_rgba(0,0,0,0.37)];
+}
+
+.glass-card {
+  @apply bg-[#111827]/60 backdrop-blur-xl border border-white/5 hover:border-[#7C3AED]/50 transition-all duration-500 rounded-2xl shadow-2xl;
+}
+
+.neon-glow-purple {
+  @apply shadow-[0_0_15px_rgba(124,58,237,0.4)];
+}
+
+.neon-glow-cyan {
+  @apply shadow-[0_0_15px_rgba(6,182,212,0.4)];
+}
+
+.text-gradient {
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-[#7C3AED] to-[#06B6D4];
+}
+
+.btn-premium {
+  @apply bg-gradient-to-r from-[#7C3AED] to-[#8B5CF6] text-white font-bold py-2 px-6 rounded-[20px] shadow-lg shadow-[#7C3AED]/20 hover:scale-105 hover:shadow-[#7C3AED]/40 active:scale-95 transition-all;
+}
+
+.btn-neon-cyan {
+  @apply bg-gradient-to-r from-[#06B6D4] to-[#0891B2] text-white font-bold py-3 px-8 rounded-xl shadow-lg shadow-[#06B6D4]/20 hover:scale-[1.02] active:scale-[0.98] transition-all;
+}
+
+@keyframes wave {
+  0%, 100% { transform: scaleY(1); }
+  50% { transform: scaleY(0.6); }
+}
+
+.wave-bar {
+  @apply w-1 bg-[#06B6D4] rounded-full;
+  animation: wave 1.2s ease-in-out infinite;
+}
